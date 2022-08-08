@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.vismamusic.presentation.home.HomeFragment"
+        android:label="Home">
+
+        <action
+            android:id="@+id/action_home_to_details"
+            app:destination="@id/details">
+            <argument
+                android:name="category"
+                app:argType="string"
+                app:nullable="false"/>
+        </action>
+
+        <action
+            android:id="@+id/action_home_to_storage"
+            app:destination="@id/storage">
+            <argument
+                android:name="storageType"
+                app:argType="string"
+                app:nullable="false"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/details"
+        android:name="com.example.vismamusic.presentation.details.DetailsFragment"
+        android:label="Details"/>
+
+    <fragment
+        android:id="@+id/storage"
+        android:name="com.example.vismamusic.presentation.storage.StorageFragment"
+        android:label="Storage"/>
+
+</navigation>
